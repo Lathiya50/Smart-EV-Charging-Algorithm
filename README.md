@@ -1,13 +1,11 @@
 # Smart-EV-Charging-Algorithm
 
-#Code
-import java.util.*;
-
-public class SmartEVChargingSystem {
-    private static final int MAX_SYSTEM_CAPACITY = 92;
-    private static final int MAX_DEVICE_CAPACITY = 40;
-
-    // Device class to store device information
+    import java.util.*;
+	public class SmartEVChargingSystem {
+     private static final int MAX_SYSTEM_CAPACITY = 92;
+     private static final int MAX_DEVICE_CAPACITY = 40;
+   
+	//Device class to store device information
     static class Device {
         String id;
         int connectionTime;
@@ -147,7 +145,8 @@ public class SmartEVChargingSystem {
 
         chargingManager.disconnectDevice("Device B");
         chargingManager.printDeviceConsumptions();
-    }
-}
+   	 } 
+   	}
+
 
 The implementation includes a Device Class that stores device IDs, connection times, and current consumption, allowing for tracking individual device details. The ChargingManager Class manages device connections, disconnections, and consumption changes, using a Queue for FIFO order and a HashMap for quick device lookup. The core methods include connectDevice(), disconnectDevice(), changeDeviceConsumption(), and rebalanceConsumption(), which handle device management and ensure the total consumption does not exceed the system capacity. The consumption management prioritizes devices based on connection time, reducing consumption from the earliest connected devices first, while maintaining a maximum system capacity of 92 units and limiting individual device consumption to 40 units. The demonstration scenario simulates device connections, consumption changes, and disconnections, printing the device consumptions at each step. The implementation offers advantages such as FIFO-based resource allocation, dynamic power management, and the ability to handle multiple edge cases, with potential improvements including more robust error handling, logging, and more sophisticated rebalancing strategies.
